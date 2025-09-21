@@ -4,7 +4,8 @@ using System.Text.Json.Serialization;
 
 using var httpClient = new HttpClient();
 
-var (artists, statusCode, headers) = await httpClient.FromJsonWithMetaAsync<List<Artist>>(new HttpRequestMessage(HttpMethod.Get, "https://mintplayer.com/api/v1/artist")
+var (artists, statusCode, headers) = await httpClient
+    .FromJsonWithMetaAsync<List<Artist>>(new HttpRequestMessage(HttpMethod.Get, "https://mintplayer.com/api/v1/artist")
     .AcceptJson());
 
 Debugger.Break();
